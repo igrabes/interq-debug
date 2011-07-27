@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @job.name %>
+</p>
+
+<ol>
+<% for question in @job.questions %>
+	<li><%=h question.question %></li>
+<% end %>
+</ol>
+
+
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

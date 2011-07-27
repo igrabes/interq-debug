@@ -1,0 +1,16 @@
+<h1>Answer questions</h1>
+
+<%= form_tag(job_answers_path(@job)) do %>
+	<ol>
+	<% @job.questions.each do |q| %>
+		<li>
+			<p><%= q.question %></p>
+			<%= text_area_tag "answers[#{q.id}]" %>
+		</li>
+	<% end %>
+	</ol>
+	
+	<%= submit_tag %>
+<% end %>
+
+<%= link_to 'Back', root_path %>
