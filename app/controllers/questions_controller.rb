@@ -1,6 +1,5 @@
 class QuestionsController < ApplicationController
-  # GET /questions
-  # GET /questions.xml
+
   def index
     @jobs =  Job.find(params[:job_id])
     @questions = Question.all
@@ -12,8 +11,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # GET /questions/1
-  # GET /questions/1.xml
+
   def show
      @job = Job.find(params[:job_id])
       @question = @job.questions.find(params[:id])
@@ -24,8 +22,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # GET /questions/new
-  # GET /questions/new.xml
+
   def new
     @question = Question.new
 
@@ -35,13 +32,12 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # GET /questions/1/edit
+
   def edit
     @question = Question.find(params[:id])
   end
 
-  # POST /questions
-  # POST /questions.xml
+
   def create
     @question = Question.new(params[:question])
 
@@ -56,8 +52,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # PUT /questions/1
-  # PUT /questions/1.xml
+
   def update
     @question = Question.find(params[:id])
 
@@ -72,8 +67,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # DELETE /questions/1
-  # DELETE /questions/1.xml
+
   def destroy
     @question = Question.find(params[:id])
     @question.destroy

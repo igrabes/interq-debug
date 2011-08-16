@@ -1,31 +1,19 @@
 class AnswersController < ApplicationController
-  # GET /answers
-  # GET /answers.xml
+  
+  def list
+    @job = Job.find(params[:job_id], :include => :answers)
+    @answer = @job.answers.find.all
+  end
+  
   def index
-    @answers = Answer.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @answers }
-    end
+    @answers = Answer.all(:order => 'created_at DESC', :limit => 10)
   end
 
-  GET /answers/1
-  GET /answers/1.xml
   def show
-        @job = Job.find(params[:id])
-  #       @question = @job.questions.find(params[:id])
-  #       @answer = @question.answers.find(params[:id])
-  #         
-  # 
-  #     respond_to do |format|
-  #       format.html # show.html.erb
-  #       format.xml  { render :xml => @answer }
-  #     end
-    end
+    @job = Job.find(params[:job_id], :include => :answers)
+    @answer = @job.answers.find(params[:id])
+  end
 
-  # GET /answers/new
-  # GET /answers/new.xml
   def new
     @job = Job.find(params[:job_id])
 
@@ -35,31 +23,20 @@ class AnswersController < ApplicationController
     end
   end
 
-  # GET /answers/1/edit
   def edit
     @answer = Answer.find(params[:id])
   end
 
-  # POST /answers
-  # POST /answers.xml
   def create
-    @job = Job.find(params[:job_id])
-    
-    # count = 0
-
+    job = Job.find(params[:job_id])
+     
     params[:answers].each do |question_id, answer_text|
       next if answer_text.blank?
       question = Question.find(question_id)
       question.answers.create!(:answer => answer_text)
-      # count += 1
     end
-
-    # raise "I created #{count} Answers!"
-    redirect_to job_answers_path(@job_id)
   end
 
-  # PUT /answers/1
-  # PUT /answers/1.xml
   def update
     @answer = Answer.find(params[:id])
 
@@ -74,8 +51,6 @@ class AnswersController < ApplicationController
     end
   end
 
-  # DELETE /answers/1
-  # DELETE /answers/1.xml
   def destroy
     @answer = Answer.find(params[:id])
     @answer.destroy
@@ -86,3 +61,8 @@ class AnswersController < ApplicationController
     end
   end
 end
+
+
+# @job = current_user.jobs.find(params[:job_id])
+# @answer = @job.answers
+# end

@@ -4,4 +4,8 @@ class Answer < ActiveRecord::Base
   def job
     question.job
   end
+  
+  def to_s
+    answer
+  end
 end

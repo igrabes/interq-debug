@@ -1,6 +1,5 @@
 class JobsController < ApplicationController
-  # GET /jobs
-  # GET /jobs.xml
+
   def index
     @jobs = Job.all
 
@@ -10,8 +9,7 @@ class JobsController < ApplicationController
     end
   end
 
-  # GET /jobs/1
-  # GET /jobs/1.xml
+  
   def show
     @job = Job.find(params[:id])
 
@@ -21,8 +19,7 @@ class JobsController < ApplicationController
     end
   end
 
-  # GET /jobs/new
-  # GET /jobs/new.xml
+  
   def new
     @job = Job.new
     10.times do
@@ -35,13 +32,12 @@ class JobsController < ApplicationController
     end
   end
 
-  # GET /jobs/1/edit
+ 
   def edit
     @job = Job.find(params[:id])
   end
 
-  # POST /jobs
-  # POST /jobs.xml
+
   def create
     @job = Job.new(params[:job])
 
@@ -56,8 +52,7 @@ class JobsController < ApplicationController
     end
   end
 
-  # PUT /jobs/1
-  # PUT /jobs/1.xml
+
   def update
     @job = Job.find(params[:id])
 
@@ -72,8 +67,7 @@ class JobsController < ApplicationController
     end
   end
 
-  # DELETE /jobs/1
-  # DELETE /jobs/1.xml
+  
   def destroy
     @job = Job.find(params[:id])
     @job.destroy

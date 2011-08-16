@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(:version => 20110724203039) do
 
   create_table "answers", :force => true do |t|
+    t.integer  "job_id"
     t.integer  "question_id"
     t.text     "answer"
     t.datetime "created_at"

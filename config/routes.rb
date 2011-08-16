@@ -2,15 +2,15 @@ InterDebug::Application.routes.draw do
   
   
   root :to => "jobs#index"
-    
-    
-   match 'jobs/:id/answers' => 'answers#show'
-    
+  
   resources :jobs do
     resources :questions 
-    resources :answers
+    resources :answers 
   end
   
+  # match 'jobs/:job_id/answers/list' => 'answers#show'
+  
+  # match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   
 
   

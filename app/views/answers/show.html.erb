@@ -1,28 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<%= params[:job_id] %>
+
+<h1><%= @job.name %></h1>
+
 <% @job.questions.each do |q| %>
 	<ol>
 		<p><%= q.question %></p>
-		<p><%= q.answers %></p>
+		<p><%= q.answers.last %></p>
 	</ol>
 <% end %>
 
-
-
-
-
-
-<p>
-  <b>Answer:</b>
-  <%= @question.answers %>
-</p>
-
-<!-- <ol>
-<% for answer in @job.answers %>
-	<li></li>
-	<li><%=h answer.answer %></li>
-<% end %>
-</ol> -->
-
-
-<%= link_to 'Back', new_job_answer_path(@job, answer) %>
+<%= link_to 'Back', new_job_answer_path(@job) %>
