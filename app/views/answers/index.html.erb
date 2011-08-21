@@ -2,17 +2,29 @@
 
 <table>
   <tr>
+		<th>USER_ID</th>
     <th>ID</th>
     <th>Answers</th>
     <th>Actions</th>
   </tr>
+<%= current_user.answers.first %>
+<%= current_user.answers.count %>
+<%= current_user.email %>
+<% if current_user  %>
+	<% @job.answers.each do |answer| %>
+	  <tr>
+			<td><%= answer.user_id %></td>
+			<td><%= answer.id %></td>
+	    <td><%= answer.answer %></td>
+		  <td><%= answer.question.question %></td>
+	    <td><%= link_to 'Show', job_answers_path %></td>
+	  </tr>
+	<% end %>
+<% else %>
 
-<% @answers.each do |answer| %>
-  <tr>
-		<td><%= answer.id %></td>
-    <td><%= answer.answer %></td>
-    <td><%= link_to 'Show', job_answers_path %></td>
-  </tr>
+<p>Log In!</p>
+
+
 <% end %>
 </table>
 

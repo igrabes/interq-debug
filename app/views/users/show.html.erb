@@ -1,0 +1,16 @@
+<table>
+	<tr>
+		<td>Answer ID</td>
+		<td>Answer</td>
+		<td>Question</td> 
+		<td>Job</td> 
+	</tr>
+<% @user.answers.each do |a| %>
+	<tr>
+		<td><%= a.id %></td>
+		<td><%= a.answer %></td>
+		<td><%= a.question.question %></td>
+		<td><%= a.question.job_id %></td>
+	</tr>
+<% end %>
+</table>

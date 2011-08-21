@@ -1,17 +1,13 @@
 class AnswersController < ApplicationController
-  
-  def list
-    @job = Job.find(params[:job_id], :include => :answers)
-    @answer = @job.answers.find.all
-  end
-  
-  def index
-    @answers = Answer.all(:order => 'created_at DESC', :limit => 10)
-  end
 
+  def index
+    @job =  Job.find(params[:job_id])
+    @answer = @job.questions.collect { |q| q.answers(params[:user_id]) }
+  end
+  
   def show
-    @job = Job.find(params[:job_id], :include => :answers)
-    @answer = @job.answers.find(params[:id])
+    @job = current_user.jobs.find(params[:job_id])
+    @answer = @job.answers
   end
 
   def new
@@ -28,13 +24,14 @@ class AnswersController < ApplicationController
   end
 
   def create
-    job = Job.find(params[:job_id])
+    @job = Job.find(params[:job_id])
      
     params[:answers].each do |question_id, answer_text|
       next if answer_text.blank?
       question = Question.find(question_id)
-      question.answers.create!(:answer => answer_text)
+      question.answers.create!(:answer => answer_text, :user_id => current_user.id)
     end
+    redirect_to user_path(current_user)
   end
 
   def update
@@ -66,3 +63,6 @@ end
 # @job = current_user.jobs.find(params[:job_id])
 # @answer = @job.answers
 # end
+
+
+# question.answers.create!(:answer -> answer_text, :user_id => current_user.id)

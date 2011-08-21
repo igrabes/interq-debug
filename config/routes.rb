@@ -1,12 +1,15 @@
 InterDebug::Application.routes.draw do
-  
-  
-  root :to => "jobs#index"
-  
+
+  devise_for :users
+  resources :users  
   resources :jobs do
     resources :questions 
     resources :answers 
   end
+  
+  match '/users/:id', :to => 'users#show'
+  
+  root :to => "jobs#index"
   
   # match 'jobs/:job_id/answers/list' => 'answers#show'
   
