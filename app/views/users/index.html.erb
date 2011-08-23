@@ -1,0 +1,14 @@
+<table>
+	<tr>
+		<td>User I.D.</td>
+		<td>Email</td>
+		<td>Sign-In Count</td>
+	</tr>
+	<tr>
+		<% @user.each do |u| %>
+		<td><%= u.id %></td>
+		<td><%= u.email %></td>
+		<td><%= u.sign_in_count %></td>
+	</tr>
+	<% end %>
+</table>
