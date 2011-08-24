@@ -23,10 +23,10 @@ class ApplicationController < ActionController::Base
   end
   
   def admin?
-    if current_user.nil?
+    if current_user_nil
       redirect_to new_user_session_path
     else
-    current_user.email == "ian.grabill@gmail.com"
+      current_user.email == "ian.grabill@gmail.com"
     end
   end
 end
