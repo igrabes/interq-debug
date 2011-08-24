@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     if current_user.nil?
       redirect_to new_user_session_path
     elsif
-      current_user.email == "ian.grabill@gmail.com" || current_user.admin == true
+      current_user.email == "ian.grabill@gmail.com" || current_user.admin? == true
     end
   end
   
