@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
 
+  before_filter :current_user_nil
 
   def index
     @jobs = Job.all

@@ -1,5 +1,11 @@
 InterDebug::Application.routes.draw do
 
+  root :to => "pages#home"
+  
+
+  get '/about' => 'pages#about'
+  get '/contact' => 'pages#contact'
+
   devise_for :users
   resources :users  
   resources :jobs do
@@ -9,7 +15,6 @@ InterDebug::Application.routes.draw do
   
   match '/users/:id', :to => 'users#show'
   
-  root :to => "jobs#index"
   
   # match '/answers/new', :to => "answers#new", :via => :get
   

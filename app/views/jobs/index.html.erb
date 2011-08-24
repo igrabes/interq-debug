@@ -10,16 +10,18 @@
 
 <% @jobs.each do |job| %>
   <tr>
-    <td><%= job.name %></td>
 		<td><%= link_to job.name, new_job_answer_path(job.id) %></td>
+		<% if admin? %>
     <td><%= link_to 'Show', job %></td>
     <td><%= link_to 'Edit', edit_job_path(job) %></td>
     <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Job', new_job_path %>
-
+<% if admin? %>
+	<%= link_to 'New Job', new_job_path %>
+<% end %>
