@@ -6,19 +6,11 @@ class ApplicationController < ActionController::Base
   
   protected
   
-  def admin?
-    if current_user.nil?
-      redirect_to new_user_session_path
-    else
-    current_user.email == "ian.grabill@gmail.com"
-    end
-  end
-  
   def current_user_nil
     if current_user.nil?
       redirect_to new_user_session_path
     elsif
-      current_user.email == "ian.grabill@gmail.com" || current_user.admin? == true
+      current_user.email == "ian.grabill@gmail.com" || current_user.admin == true
     end
   end
   
@@ -30,6 +22,12 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  
+  def admin?
+    if current_user.nil?
+      redirect_to new_user_session_path
+    else
+    current_user.email == "ian.grabill@gmail.com"
+    end
+  end
 end
 
