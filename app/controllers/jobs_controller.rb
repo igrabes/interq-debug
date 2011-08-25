@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
 
   before_filter :current_user_nil
+  before_filter :authorize, :except => [:index]
 
   def index
     @jobs = Job.all
