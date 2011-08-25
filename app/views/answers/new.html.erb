@@ -1,4 +1,7 @@
-<h1>Answer questions</h1>
+<h2><%= @job.name %> Interview Questions</h2>
+
+<h3>Create your own study guide by answering the questions below. These were all taken from a recent <%= @job.name %> interview.</h3>
+<br \>
 
 <%= form_tag(job_answers_path(@job)) do %>
 	<ol>
@@ -13,4 +16,4 @@
 	<%= submit_tag("Submit") %>
 <% end %>
 
-<%= link_to 'Back', root_path %>
+<%= link_to 'Back', jobs_path %>

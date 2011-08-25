@@ -3,18 +3,106 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 
-body {
-	background: url("/images/bg1.png") repeat;
+/* -- 2. TYPOGRAPHY -- */
+
+body { 
+	margin:0px auto; 
+	font-family: Arial, Helvetica, sans-serif; font-size:14px; 
+	line-height:21px; 
+	color:#555f6e; 
+	background:#fbfdff url(/images/pattern.jpg) 
+	}
+		
+p, ul, ol { 
+	margin-bottom: 21px 
+	}
+	
+ul { 
+	list-style:square; 
+	margin-left: 21px 
+	}
+	
+ol { 
+	list-style:decimal; 
+	margin-left: 21px 
+	}
+	
+h1, h2, h3 { 
+	font-family: Helvetica, Arial, sans-serif; 
+	color:#3e4550; 
+	font-weight:bold; 
+	margin-bottom:21px; 
+	text-shadow:0px 1px 0px rgba(255,255,255,0.5) 
+	}
+		
+h1 { 
+	font-size: 36px; 
+	line-height: 42px; 
+	letter-spacing:-1px; 
+	margin-bottom:0px 
+	}
+
+h2 { 
+	font-size: 26px; 
+	line-height: 30px; 
+	letter-spacing:0px; 
+	margin-bottom:12px 
+	}
+	
+h3 { 
+	font-size: 16px; 
+	margin-bottom:6px 
+	}
+		
+a {	
+	color:#009cff; 
+	text-decoration:none; 
+	border:none; 
+	outline:none 
+	}
+	
+a:hover { 
+	text-decoration:underline 
+	}
+	
+em, i { 
+	font-style:italic 
+	}
+	
+b, strong { 
+	font-weight:bold 
+	}
+	
+input, textarea { 
+	border:none; outline:none 
+	}
+
+/* -- 3. STRUCTURE -- */
+
+.header, .header1, .primary, .primary1, .featured, .footer { width:960px; margin:0px auto; position:relative; overflow:hidden; text-align:left }
+.header { height:96px; background:url(/images/top_curve.png) 0px bottom no-repeat }
+.brand { text-align:right }
+.header1 { width:864px; padding:36px 48px 80px; background:url(/images/top_curve_arrow.png) 0px bottom no-repeat }
+.featured { width: 864px; padding:0px 48px; background:#ecf1f6 url(/images/middle_shade.png) 0px 0px repeat-y }
+.primary { width:864px; min-height:70px; padding:84px 48px 0px; background:url(/images/bottom_curve_arrow.png) 0px 0px no-repeat }
+.primary1 { width:864px; padding:96px 48px 36px; background:url(/images/bottom_curve.png) 0px 0px no-repeat }
+.half, .one_third { float:left; width:408px; margin-right:48px; position:relative; overflow:hidden }
+.one_third { width:256px }
+.footer { width:864px; padding:24px 48px; background:url(/images/hr.gif) 0px 0px repeat-x }
+
+/*body {
+	background:url(/images/btn.jpg) 0px 0px repeat-x; 
+	text-decoration:none;
 	font-family: "Lucida Grande", "Arial", "sans-serif";
 	font-size: 14px;
-	/*margin: auto;*/
-}
+	margin: auto; 
+}*/
 
 #container {
   width: 900px;
   height: 100%;
   margin: 0 auto;
-  background: #EEEEEE url("/images/bg2.png") repeat-x;
+  background: #fff url("/images/bg2.png") repeat-x;
   padding: 20px 40px;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -206,6 +294,11 @@ nav ul li a:visited {
 nav ul li a:hover {
   text-decoration: underline;
 	background: #000;
+}
+
+div#user_nav {
+	margin-right: -120px;
+	margin-top: 10px;
 }
 
 /* dropdown menu */

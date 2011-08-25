@@ -1,16 +1,14 @@
-<h1>Listing jobs</h1>
+<h3>Click below to view job specific interview questions. Fill in your answers and begin preparing!</h3>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @jobs.each do |job| %>
   <tr>
-		<td><%= link_to job.name, new_job_answer_path(job.id) %></td>
+		<td>
+			<ul>
+				<li><%= link_to job.name, new_job_answer_path(job.id) %></li>
+			</ul>
+		</td>
 		<% if admin? %>
     <td><%= link_to 'Show', job %></td>
     <td><%= link_to 'Edit', edit_job_path(job) %></td>
