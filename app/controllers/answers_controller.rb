@@ -1,4 +1,6 @@
 class AnswersController < ApplicationController
+  
+  before_filter :current_user_nil
 
   def index
     @job =  Job.find(params[:job_id])
