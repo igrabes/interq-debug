@@ -29,5 +29,6 @@ class ApplicationController < ActionController::Base
     current_user.email == "ian.grabill@gmail.com"
     end
   end
+
 end
 

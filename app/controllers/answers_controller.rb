@@ -60,12 +60,6 @@ class AnswersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 end
 
-
-# @job = current_user.jobs.find(params[:job_id])
-# @answer = @job.answers
-# end
-
-
-# question.answers.create!(:answer -> answer_text, :user_id => current_user.id)

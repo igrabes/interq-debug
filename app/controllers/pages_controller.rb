@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   
   def index
     if user_signed_in?
-      redirect_to :controller => 'pages', :action => 'home'
+      redirect_to :controller => 'jobs', :action => 'index'
     else 
       @index = "Index"
       render :layout => false
