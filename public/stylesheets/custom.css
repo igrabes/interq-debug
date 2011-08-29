@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* Markup */
 
 <div class="paper" contenteditable></div>
@@ -59,6 +60,8 @@ body {
     outline: none;
 }
 =======
+=======
+>>>>>>> 0643dc3071e2411b62ab3637d6939b5f0f906ec7
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
@@ -492,4 +495,7 @@ input#answer_submit {
 	
 }
 
+<<<<<<< HEAD
+>>>>>>> 0643dc3071e2411b62ab3637d6939b5f0f906ec7
+=======
 >>>>>>> 0643dc3071e2411b62ab3637d6939b5f0f906ec7
