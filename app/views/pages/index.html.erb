@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Preptly</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!--[if IE]>
+            <style type="text/css">
+                #pager { padding-left: 20px }
+                #pager li { float:left }
+            </style>
+        <![endif]-->
+				<%= stylesheet_link_tag 'style', :media => "all" %>
+        <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.cycle.all.min.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="js/cufon-yui.js"></script>
+        <script type="text/javascript" src="js/PT_Sans.font.js"></script> 
+        <script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript">
+			Cufon.replace('h2');       
+        </script> 
+    </head><body>
+        <div class="header1">
+							<%= render 'layouts/landing_header'%>
+        </div><!-- .header1 -->
+        <div class="featured">
+            <div class="half">
+                <h2>View our industry specific questions to be prepared for your next interview!</h2>
+								<br \>
+								<br \>
+                <p></p>
+                <p><%= link_to "Free Study Guide", jobs_path, :class => "button" %></p>
+                <p class="tiny"></p>
+            </div><!-- .half -->
+            <div class="half last">
+                <div class="slider_wrap">
+                    <ul id="slider">
+                        <li><img src="images/slide1.png" alt="Product Slide"></li>
+                        <li><img src="images/slide1.png" alt="Product Slide"></li>
+                        <li><img src="images/slide1.png" alt="Product Slide"></li>
+                        <li><img src="images/slide1.png" alt="Product Slide"></li>
+                    </ul>
+                </div><!-- .slider_wrap -->
+                <ul id="pager"></ul>
+            </div><!-- .half last -->
+        </div><!-- .featured -->
+        <div class="primary1">
+            <div class="half">
+                <ul class="features">
+                    <li>
+                        <img class="alignleft" src="images/icons/book_48.png" alt="star">
+                        <h3>Quality Services</h3>
+                        <p>Aenean sodales, augue venenatis posuere fermentum, tellus velit vestibulum libero.</p>
+                    </li>
+                    <li>
+                        <img class="alignleft" src="images/icons/question_48.png" alt="cd">
+                        <h3>Clean &amp; Optimized Markup</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo ante, consectetur sit amet.</p>
+                    </li>
+                    <li>
+                        <img class="alignleft" src="images/icons/paper_48.png" alt="thumbs">
+                        <h3>Consistent Support</h3>
+                        <p>Praesent in dolor eu orci malesuada viverra vitae vel purus. Sed sit amet dui nisl.</p>
+                    </li>                
+                </ul>
+            </div>
+<!-- .half -->
+            <div class="half last">
+               	<ul class="features">
+                   <li>
+                       <img class="alignleft" src="images/icons/pdf_48.png" alt="star">
+                       <h3>Quality Services</h3>
+                       <p>Aenean sodales, augue venenatis posuere fermentum, tellus velit vestibulum libero.</p>
+                   </li>
+                   <li>
+                       <img class="alignleft" src="images/icons/star_48.png" alt="cd">
+                       <h3>Clean &amp; Optimized Markup</h3>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo ante, consectetur sit amet.</p>
+                   </li>
+                   <li>
+                       <img class="alignleft" src="images/icons/thumbs_up_48.png" alt="thumbs">
+                       <h3>Consistent Support</h3>
+                       <p>Praesent in dolor eu orci malesuada viverra vitae vel purus. Sed sit amet dui nisl.</p>
+                   </li>                
+               </ul>
+                </div><!-- .testimonials -->                   
+            </div><!-- .half last -->          
+        </div><!-- .primary1 -->
+        <div class="footer">
+            <div class="notes">
+                &copy; 2011 Preptly.
+            </div>
+            <ul class="social">
+                <li><a class="twitter" href="#" title="Twitter"></a></li>
+                <li><a class="facebook" href="#" title="Facebook"></a></li>
+            </ul>
+						<%= render 'layouts/footer'%>
+        </div><!-- .footer -->
+    </body>
+</html>	

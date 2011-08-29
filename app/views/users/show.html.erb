@@ -1,16 +1,14 @@
-<table>
-	<tr>
-		<td>Answer ID</td>
-		<td>Answer</td>
-		<td>Question</td> 
-		<td>Job</td> 
-	</tr>
-<% @user.answers.each do |a| %>
-	<tr>
-		<td><%= a.id %></td>
-		<td><%= a.answer %></td>
-		<td><%= a.question.question %></td>
-		<td><%= a.question.job_id %></td>
-	</tr>
-<% end %>
-</table>
+<p id="notice"><%= notice %></p>
+<h3>Study these answers to ace your interview!</h3>
+<br \>
+
+<div class="answer_field center">
+	<% @user.answers.each do |a| %>
+		<h4><%= a.question.question %>:</h4>
+		<p><%= a.answer %></p>
+	<% end %>
+</div>
+
+<br \>
+
+<h3>Let us know what we can do to make Preptly better, <%= link_to 'Contact Us Here', contact_path %>!</h3>

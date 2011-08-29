@@ -102,7 +102,7 @@ b, strong {
   width: 900px;
   height: 100%;
   margin: 0 auto;
-  background: #fff url("/images/bg2.png") repeat-x;
+  background: #fff;
   padding: 20px 40px;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -264,6 +264,7 @@ textarea {
 
 nav {
   float: right;
+	color: #fff;
 }
 
 nav {

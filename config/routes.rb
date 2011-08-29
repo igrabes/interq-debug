@@ -1,10 +1,11 @@
 InterDebug::Application.routes.draw do
 
-  root :to => "pages#home"
+  root :to => "pages#index"
   
 
   get '/about' => 'pages#about'
   get '/contact' => 'pages#contact'
+  get '/home' => 'pages#home'
 
   devise_for :users
   resources :users  
