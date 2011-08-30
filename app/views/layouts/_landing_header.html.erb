@@ -2,10 +2,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Preptly</title>
 	<a class="imglink" href="/" >
-		<%= image_tag "preptly-5.png", :alt => "Preptly Logo" %>
+		<%= image_tag "preptly-5.png", :alt => "Preptly Logo", :class => "preplogo" %>
 		</a>
 	<%= stylesheet_link_tag 'style' %>
 	<%= yield :landing_page %>
+	<nav>
+		<div id="user_nav">
+	    <% if user_signed_in? %>
+	      Signed in as <%= current_user.email %><br /> 
+	      Not you?
+	      <%= link_to "Sign out", destroy_user_session_path %> 
+	    <% else %>
+	      <%= link_to "Sign In", user_session_path %>
+				or
+				<%= link_to "Sign Up", new_user_registration_path %>
+	    <% end %>
+	  </div>
+	</nav>
 	<!--[if IE]>
 	   <style type="text/css">
 	       #pager { padding-left: 20px }

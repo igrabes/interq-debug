@@ -87,10 +87,30 @@ box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
 
 /* -- 6. MISCELLANEOUS -- */
 
-.testimonial { position:relative; overflow:hidden; width:368px; float:left; margin-right:48px; padding:21px 0px 0px 21px; background:url(/images/quote.png) 0px 0px no-repeat; font-family:Georgia, "Times New Roman", Times, serif; color:#87909a; }
+.testimonial { 
+	position:relative; 
+	overflow:hidden; width:850px; 
+	margin-right:48px; 
+	padding:21px 0px 0px 21px; 
+	background:url(/images/quote.png) 0px 0px no-repeat; 
+	font-family:Georgia, "Times New Roman", Times, serif; 
+	color:#000;
+	 }
+	
+.testimonial p {
+	font-size: 28px;
+	line-height:28px
+}
+
+.testimonial p.tiny {
+	font-size:20px; color:#87909a; line-height:21px; margin-bottom:0px
+}
+
+
+	
 ul.features { position:relative; overflow:hidden; margin:0px; padding:0px; list-style:none; font-size:14px; line-height:21px }
 ul.features li { position:relative; overflow:hidden }
-.button { font-family: Helvetica, sans-serif; letter-spacing:-1px; display:inline-block; padding:0px 21px; font-size:36px; line-height:70px; 
+.button { font-family: Helvetica, sans-serif; letter-spacing:-1px; display:inline-block; padding:0px 21px; font-size:36px; line-height:70px; margin-left:50px;
 border:1px solid #069fed;
 background:url(/images/btn.jpg) 0px 0px repeat-x; color:#fff; text-decoration:none; text-shadow:0px 1px 0px #048ee8; border-radius:10px; -moz-border-radius:10px; -webkit-border-radius:10px; -khtml-border-radius:10px;
 /*Box Shadow*/
@@ -121,3 +141,72 @@ box-shadow: 0px 2px 2px rgba(255,255,255,0.3);
 .tiny { font-size:12px; color:#87909a; line-height:21px; margin-bottom:0px }
 .big { font-size:48px  }
 .notes { float:left; width:408px; margin-right:48px; font-size:11px; line-height:16px; color:#a4abb3 }
+
+.testimonial_front {
+	background:#fff; 
+	border:1px solid #e0e4ea; 
+	padding:15px; border-radius:2px; 
+	-moz-border-radius:2px; 
+	-webkit-border-radius:2px; 
+	-khtml-border-radius:2px
+}
+
+.testimonial_front h1 {
+	font-family: 'BaskervilleFSRegular', serif;
+	text-align: center;
+	font-size: 18px;
+	position:relative; 
+	margin:0px; 
+	padding:0px; 
+}
+
+.testimonial_front p {
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+	font-size: 14px;
+}
+
+/* Navigation */
+
+nav {
+  float: right;
+	color: #000;
+}
+
+nav {
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  /*list-style-type: none;*/
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+nav ul li a:visited {
+  color: #09c;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+	background: #000;
+}
+
+div#user_nav {
+	margin-right: -30px;
+	margin-top: 10px;
+}
+
+img.preplogo {
+	width: 500px;
+}

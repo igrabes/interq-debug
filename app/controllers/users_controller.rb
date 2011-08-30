@@ -11,5 +11,6 @@ class UsersController < ApplicationController
     #first find the user
     @user = current_user
   end
+
 end
 
