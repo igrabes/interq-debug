@@ -469,7 +469,22 @@ input#answer_submit {
 	
 }
 
-<<<<<<< HEAD
->>>>>>> 0643dc3071e2411b62ab3637d6939b5f0f906ec7
-=======
->>>>>>> 0643dc3071e2411b62ab3637d6939b5f0f906ec7
+.signup {
+	margin-left: 100px;
+
+	padding:25px;
+	width: 250px;
+}
+
+.signup_instruct {
+	float:right;
+	border: 1px solid;
+	padding: 10px;
+}
+
+.signup_instruct li {
+	font-size: 120%;
+}
+form {
+	width: 300px;
+}

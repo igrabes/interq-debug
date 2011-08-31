@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   
   def current_user_nil
     if current_user.nil?
-      redirect_to new_user_session_path
+      redirect_to new_user_registration_path
     elsif
       current_user.email == "ian.grabill@gmail.com" || current_user.admin == true
     end
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   
   def admin?
     if current_user.nil?
-      redirect_to new_user_session_path
+      redirect_to new_user_registration_path
     else
     current_user.email == "ian.grabill@gmail.com"
     end
