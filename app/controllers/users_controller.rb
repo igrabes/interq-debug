@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_filter :authorize, :except => [:show]
   
   def index
-    @user = User.all
+    @user = User.order("id")
   end
   
   def show

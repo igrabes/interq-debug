@@ -8,7 +8,6 @@
     <th>Actions</th>
   </tr>
 <%= current_user.answers.first %>
-<%= current_user.answers.count %>
 <%= current_user.email %>
 <% if current_user  %>
 	<% @job.answers.each do |answer| %>
@@ -27,7 +26,3 @@
 
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Answer', new_job_answer_path %>
