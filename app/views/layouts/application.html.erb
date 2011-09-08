@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Preptly</title>
-	<%= render 'layouts/stylesheets' %>
-  <%= javascript_include_tag "jquery.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js", "rails.js" %>
-  <%= csrf_meta_tag %>
-	<script type="text/javascript">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  	<title>Preptly</title>
+<meta name="description" content="Practice for your upcoming interviews with Preptly's free study guide tool. Get an inside look at what you need to know to ace the interview." />
+<meta name="keywords" content="interview, preparation, study, guide, questions, job, career, headhunters, job-hirers, entry-level" />
+		<%= render 'layouts/stylesheets' %>
+  	<%= javascript_include_tag "jquery.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js", "rails.js" %>
+  	<%= csrf_meta_tag %>
+
+		<!-- Google Analytics -->
+		<script type="text/javascript">
 
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-15833249-9']);
@@ -17,7 +22,7 @@
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
 
-	</script>
+		</script>
 </head>
 <%= yield :javascript %>
 <body>
