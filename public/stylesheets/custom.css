@@ -488,3 +488,5 @@ input#answer_submit {
 form {
 	width: 300px;
 }
+
+.handle:hover{cursor: move;}

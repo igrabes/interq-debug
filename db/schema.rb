@@ -10,45 +10,46 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110825021537) do
+ActiveRecord::Schema.define(:version => 20110908014226) do
 
   create_table "answers", :force => true do |t|
-    t.integer  "job_id"
-    t.integer  "question_id"
-    t.integer  "user_id"
-    t.text     "answer"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "job_id"
+    t.integer   "question_id"
+    t.integer   "user_id"
+    t.text      "answer"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "jobs", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "position"
   end
 
   create_table "questions", :force => true do |t|
-    t.integer  "job_id"
-    t.text     "question"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "job_id"
+    t.text      "question"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "",    :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "",    :null => false
-    t.string   "password_salt",                       :default => "",    :null => false
-    t.string   "reset_password_token"
-    t.string   "remember_token"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "admin",                               :default => false
+    t.string    "email",                               :default => "",    :null => false
+    t.string    "encrypted_password",   :limit => 128, :default => "",    :null => false
+    t.string    "password_salt",                       :default => "",    :null => false
+    t.string    "reset_password_token"
+    t.string    "remember_token"
+    t.timestamp "remember_created_at"
+    t.integer   "sign_in_count",                       :default => 0
+    t.timestamp "current_sign_in_at"
+    t.timestamp "last_sign_in_at"
+    t.string    "current_sign_in_ip"
+    t.string    "last_sign_in_ip"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.boolean   "admin",                               :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.9'
 gem 'formtastic'
 gem 'devise'
+gem 'acts_as_list'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

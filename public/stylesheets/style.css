@@ -222,3 +222,5 @@ img.preplogo {
 	margin-left: -60px;
 	width: 500px;
 }
+
+.handle:hover{cursor: move;}

@@ -1,22 +1,50 @@
+<% content_for :javascript do %>
+<%= javascript_tag do %>
+// Sorting the list
+
+$(document).ready(function(){
+$('#jobs').sortable({
+axis: 'x,y',
+dropOnEmpty: false,
+handle: '.handle',
+cursor: 'crosshair',
+items: 'li',
+opacity: 0.4,
+scroll: true,
+update: function(){
+$.ajax({
+type: 'post',
+data: $('#jobs').sortable('serialize'),
+dataType: 'script',
+complete: function(request){
+$('#jobs').effect('highlight');
+},
+url: '/jobs/sort'})
+}
+});
+});
+<% end %>
+<% end %>
 <h3>Click below to view job specific interview questions. Fill in your answers and begin preparing!</h3>
 
-<table>
 
-<% @jobs.each do |job| %>
-  <tr>
-		<td>
-			<ul>
-				<li><%= link_to job.name, new_job_answer_path(job.id) %></li>
-			</ul>
-		</td>
-		<% if admin? %>
-    <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
+
+<ul id="jobs">
+
+	<% @jobs.each do |job| %>
+		<li id="job_<%= job.id %>">
+			<% if admin? %>
+				<span class="handle">[drag]</span>
+			<% end %>
+			<%= link_to job.name, new_job_answer_path(job.id) %>
+			<% if admin? %>
+    | <%= link_to 'Show', job %>
+   	- <%= link_to 'Edit', edit_job_path(job) %>
+    - <%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %>
 		<% end %>
-  </tr>
-<% end %>
-</table>
+		</li>
+	<% end %>
+</ul>
 
 <br />
 

@@ -10,6 +10,7 @@ InterDebug::Application.routes.draw do
   devise_for :users
   resources :users  
   resources :jobs do
+    post :sort, :on => :collection
     resources :questions 
     resources :answers 
   end

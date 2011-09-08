@@ -1,15 +1,24 @@
 class JobsController < ApplicationController
 
-  before_filter :current_user_nil
-  before_filter :authorize, :except => [:index]
+  before_filter :current_user_nil, :except => [:sort]
+  before_filter :authorize, :except => [:index, :sort]
 
   def index
-    @jobs = Job.all
+    @jobs = Job.order('jobs.position ASC')
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @jobs }
     end
+  end
+  
+  def sort
+    @jobs = Job.all
+    @jobs.each do |job|
+      job.position = params['job'].index(job.id.to_s) + 1
+      job.save
+    end
+    
   end
 
   
