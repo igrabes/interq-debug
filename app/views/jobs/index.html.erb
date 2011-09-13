@@ -41,6 +41,7 @@ url: '/jobs/sort'})
 			<% if current_user %>
 				<h3><%= link_to job.name, new_job_answer_path(job.id) %></h3>
 			<% end %> 
+			<br \>
 			<% if current_user.nil? %>
 			  <div id="login_button">
 				 <%= link_to "Login To View Questions", new_user_registration_path %>
@@ -51,12 +52,12 @@ url: '/jobs/sort'})
    	- <%= link_to 'Edit', edit_job_path(job) %>
     - <%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %>
 			<% end %>
-			<h5>Top Question:</h5>
+			<h5>Sample Question:</h5>
 			<% if current_user.nil? %>
-			  <p><%= job.questions.first.question %></p>
+			  <p><%= job.questions.last.question %></p>
 			<% end %>
 			<% if current_user %>
-				<p><%=link_to "#{job.questions.first.question}", new_job_answer_path(job.id)  %></p>
+				<p><%=link_to "#{job.questions.last.question}", new_job_answer_path(job.id)  %></p>
 			<% end %> 
 	  </li>
 		<br \>
