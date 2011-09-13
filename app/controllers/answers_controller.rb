@@ -1,7 +1,8 @@
 class AnswersController < ApplicationController
   
-  before_filter :current_user_nil
+  # before_filter :current_user_nil 
   before_filter :authorize, :except => [:new, :create, :show]
+  before_filter :authenticate_user!, :only => :new
 
   def index
     @job =  Job.find(params[:job_id])
