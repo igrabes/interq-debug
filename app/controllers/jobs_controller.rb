@@ -1,7 +1,8 @@
 class JobsController < ApplicationController
 
-  before_filter :current_user_nil, :except => [:sort]
-  before_filter :authorize, :except => [:index, :sort]
+  before_filter :current_user_nil, :except => [:sort]   
+  before_filter :authorize, :except => [:index, :sort]  
+  
 
   def index
     @jobs = Job.order('jobs.position ASC')

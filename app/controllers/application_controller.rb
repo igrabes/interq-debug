@@ -1,19 +1,18 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  helper_method :admin?
-  helper_method :current_user_nil
+  helper_method :admin?, :current_user_nil, :require_user  
   
   protected
-  
+
   def current_user_nil
     if current_user.nil?
-      redirect_to new_user_registration_path
+      return false
     elsif
       current_user.email == "ian.grabill@gmail.com" || current_user.admin == true
     end
   end
-  
+
   def authorize
     unless admin?
       flash[:error] = "unauthorized access"
@@ -21,14 +20,15 @@ class ApplicationController < ActionController::Base
       false
     end
   end
-  
+
   def admin?
     if current_user.nil?
-      redirect_to new_user_registration_path
+      return false
     else
     current_user.email == "ian.grabill@gmail.com"
     end
   end
 
 end
+  
 
