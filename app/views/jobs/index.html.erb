@@ -30,21 +30,30 @@ url: '/jobs/sort'})
 
 
 <ul id="jobs">
-
 	<% @jobs.each do |job| %>
 		<li id="job_<%= job.id %>">
 			<% if admin? %>
 				<span class="handle">[drag]</span>
 			<% end %>
-			<%= link_to job.name, new_job_answer_path(job.id) %>
+				<p><%= link_to job.name, new_job_answer_path(job.id) %></p>
+			<% if current_user.nil? %>
+			  <div id="login_button">
+				 <%= link_to "Login To View Questions", new_user_registration_path %>
+				</div>        
+			<% end %>
 			<% if admin? %>
-    | <%= link_to 'Show', job %>
+      <%= link_to 'Show', job %>
    	- <%= link_to 'Edit', edit_job_path(job) %>
     - <%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %>
-		<% end %>
-		</li>
+			<% end %>
+			<h4>Top Question:</h4>
+			<p><%= job.questions.first.question %></p>
+			
+	  </li>
+		<br \>
 	<% end %>
 </ul>
+
 
 <br />
 

@@ -395,13 +395,14 @@ div.field, div.actions {
 }
 
 .field_with_errors {
-  padding: 2px;
+  padding: 2px; 
   background-color: red;
   display: table;
+	 width: 200px; 
 }
 
 #error_explanation {
-  width: 450px;
+  width: 200px;
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;
@@ -422,6 +423,7 @@ div.field, div.actions {
 
 #error_explanation ul li {
   font-size: 12px;
+	width: 200px;  
   list-style: square;
 }
 
@@ -470,8 +472,7 @@ input#answer_submit {
 }
 
 .signup {
-	margin-left: 100px;
-
+	margin-left: 150px;
 	padding:25px;
 	width: 250px;
 }
@@ -489,4 +490,35 @@ form {
 	width: 300px;
 }
 
-.handle:hover{cursor: move;}
+.handle:hover{
+	cursor: move;
+	}
+	
+	
+#jobs #login_button {  
+	padding: 10px;
+	background-color: #0088CE;
+	width: 165px;
+	margin-left: 80px;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	box-shadow: 1px 0px 5px rgba(0,0,0,0.5);
+	-moz-box-shadow: 1px 0px 5px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 1px 0px 5px rgba(0,0,0,0.5);
+	
+}            
+
+#jobs li { 
+	margin-left: 180px;
+	margin-right: auto;
+	float:center;
+	border: 1px solid;
+	padding: 10px;
+	width: 350px;
+	list-style:none;
+}   
+
+#jobs li p{
+	margin-top: 10px;
+	text-align: center;
+}
