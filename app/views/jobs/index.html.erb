@@ -35,7 +35,12 @@ url: '/jobs/sort'})
 			<% if admin? %>
 				<span class="handle">[drag]</span>
 			<% end %>
-				<p><%= link_to job.name, new_job_answer_path(job.id) %></p>
+			<% if current_user.nil? %>
+				<h3><%= link_to job.name, new_user_registration_path %></h3>
+			<% end %>
+			<% if current_user %>
+				<h3><%= link_to job.name, new_job_answer_path(job.id) %></h3>
+			<% end %> 
 			<% if current_user.nil? %>
 			  <div id="login_button">
 				 <%= link_to "Login To View Questions", new_user_registration_path %>
@@ -46,9 +51,13 @@ url: '/jobs/sort'})
    	- <%= link_to 'Edit', edit_job_path(job) %>
     - <%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %>
 			<% end %>
-			<h4>Top Question:</h4>
-			<p><%= job.questions.first.question %></p>
-			
+			<h5>Top Question:</h5>
+			<% if current_user.nil? %>
+			  <p><%= job.questions.first.question %></p>
+			<% end %>
+			<% if current_user %>
+				<p><%=link_to "#{job.questions.first.question}", new_job_answer_path(job.id)  %></p>
+			<% end %> 
 	  </li>
 		<br \>
 	<% end %>
