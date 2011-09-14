@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   
   def index
     @index = "Index"
+    render :layout => false
   end
   
   def about
