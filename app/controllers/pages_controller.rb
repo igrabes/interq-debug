@@ -5,12 +5,7 @@ class PagesController < ApplicationController
   end
   
   def index
-    if user_signed_in?
-      redirect_to :controller => 'jobs', :action => 'index'
-    else 
-      @index = "Index"
-      render :layout => false
-    end
+    @index = "Index"
   end
   
   def about
