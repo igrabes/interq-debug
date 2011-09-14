@@ -6,6 +6,5 @@ class Job < ActiveRecord::Base
   
   accepts_nested_attributes_for :questions
   accepts_nested_attributes_for :answers
-  
-  
+
 end
