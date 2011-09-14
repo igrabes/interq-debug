@@ -1,8 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
-gem 'formtastic'
-gem 'devise'
+gem 'devise', '1.1.7'
 gem 'acts_as_list'
 gem 'will_paginate'
 
