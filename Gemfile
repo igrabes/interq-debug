@@ -4,6 +4,7 @@ gem 'rails', '3.0.9'
 gem 'formtastic'
 gem 'devise'
 gem 'acts_as_list'
+gem 'will_paginate'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

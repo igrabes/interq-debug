@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110908014226) do
+ActiveRecord::Schema.define(:version => 20110914041832) do
 
   create_table "answers", :force => true do |t|
     t.integer   "job_id"
@@ -33,6 +33,19 @@ ActiveRecord::Schema.define(:version => 20110908014226) do
     t.text      "question"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "job_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

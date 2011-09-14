@@ -6,11 +6,17 @@ class JobsController < ApplicationController
 
   def index
     @jobs = Job.order('jobs.position ASC')
+    @tag = Tag.find(params[:tag_id]) if params[:tag_id]
+          if params[:search].blank?
+            @jobs = (@tag ? @tag.jobs : Job.order('jobs.position ASC'))
+          else
+            @jobs = Job.search_published(params[:search], params[:tag_id])
+          end
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @jobs }
-    end
+      format.html { @jobs = @jobs.paginate(:page => params[:page], :per_page => jobs_per_page) }
+      format.rss
+    end 
   end
   
   def sort
@@ -20,6 +26,7 @@ class JobsController < ApplicationController
       job.save
     end
     
+    render :nothing => true  
   end
 
 
@@ -91,5 +98,14 @@ class JobsController < ApplicationController
     end
   end
 
+  private
+  
+  def jobs_per_page
+    case params[:view]
+    when "list" then 40
+    when "grid" then 24
+    else 10
+    end  
+  end
 
 end

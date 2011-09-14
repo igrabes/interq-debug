@@ -15,7 +15,8 @@ InterDebug::Application.routes.draw do
     resources :answers 
   end
   
-  match '/users/:id', :to => 'users#show'
+  match '/users/:id', :to => 'users#show'  
+  match "tags/:id" => redirect("/?tag_id=%{id}")
   
   
   # match '/answers/new', :to => "answers#new", :via => :get
